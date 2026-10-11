@@ -46,6 +46,16 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--purple-deep);line-heig
 }
 .topbar b{color:var(--gold)}
 
+/* ── Taalkiezer ────────────────────────────── */
+.langbar{display:flex;justify-content:center;gap:.5rem;padding:.55rem 0 .15rem}
+.langbar button{
+  font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:.78rem;letter-spacing:.1em;
+  background:transparent;color:var(--purple-deep);border:1.5px solid var(--gold);
+  border-radius:999px;padding:.32rem 1rem;cursor:pointer;
+}
+.langbar button.active{background:var(--gold);color:var(--purple-deep);box-shadow:0 2px 6px rgba(0,0,0,.14)}
+.langbar button:not(.active):hover{background:rgba(201,162,39,.18)}
+
 /* ── Header / zegel ────────────────────────── */
 .seal{
   display:flex;justify-content:center;padding:1.6rem 0 .4rem;
@@ -157,6 +167,8 @@ section{padding:1.6rem 0}
 .tijden tr.vandaag td:first-child::after{
   content:"· vandaag";font-weight:400;font-size:.8rem;color:var(--brick);margin-left:.4rem;
 }
+body.lang-es .tijden tr.vandaag td:first-child::after{content:"· hoy"}
+body.lang-en .tijden tr.vandaag td:first-child::after{content:"· today"}
 .status{text-align:center;margin-top:.8rem;font-size:.95rem}
 .status .open{color:#2E7D32;font-weight:700}
 .status .closed{color:var(--brick);font-weight:700}
@@ -181,7 +193,12 @@ footer .demo{margin-top:.8rem;font-size:.72rem;opacity:.65;font-style:italic}
 </head>
 <body>
 
-<div class="topbar">Sinds <b>1937</b> · Nieuwendijk 183 · Amsterdam</div>
+<div class="topbar" data-i18n="topbar">Sinds <b>1937</b> · Nieuwendijk 183 · Amsterdam</div>
+<div class="langbar" role="group" aria-label="Taal / Idioma / Language">
+  <button type="button" data-lang="nl" class="active">NL</button>
+  <button type="button" data-lang="es">ES</button>
+  <button type="button" data-lang="en">EN</button>
+</div>
 
 <header>
   <div class="seal" aria-hidden="true">
@@ -200,9 +217,9 @@ footer .demo{margin-top:.8rem;font-size:.72rem;opacity:.65;font-style:italic}
 <main>
   <!-- HERO -->
   <section class="hero wrap" aria-label="Slagroomijs">
-    <div class="kicker">Amsterdamse instelling</div>
+    <div class="kicker" data-i18n="hero_kicker">Amsterdamse instelling</div>
     <div class="script">Slagroomijs</div>
-    <h2>Eén smaak. Bereid zoals in 1937.</h2>
+    <h2 data-i18n="hero_sub">Eén smaak. Bereid zoals in 1937.</h2>
     <figure class="cone-fig" aria-label="Illustratie van een hoorntje slagroomijs">
       <svg viewBox="0 0 160 230" role="img" aria-hidden="true">
         <!-- slagroom swirl -->
@@ -228,13 +245,13 @@ footer .demo{margin-top:.8rem;font-size:.72rem;opacity:.65;font-style:italic}
         </g>
       </svg>
     </figure>
-    <p>Al sinds 1937 scheppen wij ons legendarische slagroomijs — roomijs van slagroom met vanille. Elke dag vers, waarvoor Amsterdammers én toeristen graag in de rij staan.</p>
-    <div class="rating"><span class="stars">★★★★☆</span><span><b>4,4</b> · 2.491 Google-reviews</span></div>
+    <p data-i18n="hero_p">Al sinds 1937 scheppen wij ons legendarische slagroomijs — roomijs van slagroom met vanille. Elke dag vers, waarvoor Amsterdammers én toeristen graag in de rij staan.</p>
+    <div class="rating"><span class="stars">★★★★☆</span><span data-i18n="rating_text"><b>4,4</b> · 2.491 Google-reviews</span></div>
     <div class="cta-row">
-      <a class="btn btn-primary" href="tel:+31206248213">Bel ons</a>
-      <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Banketbakkerij%20Van%20der%20Linde%20Nieuwendijk%20183%201012%20MG%20Amsterdam" target="_blank" rel="noopener">Route</a>
+      <a class="btn btn-primary" href="tel:+31206248213" data-i18n="btn_call_hero">Bel ons</a>
+      <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Banketbakkerij%20Van%20der%20Linde%20Nieuwendijk%20183%201012%20MG%20Amsterdam" target="_blank" rel="noopener" data-i18n="btn_route_hero">Route</a>
     </div>
-    <div class="cash"><b>Alleen contant</b><br>Wij accepteren alleen contant geld.</div>
+    <div class="cash" data-i18n="cash"><b>Alleen contant</b><br>Wij accepteren alleen contant geld.</div>
   </section>
 
   <div class="wrap"><div class="orn" aria-hidden="true"><span>✦</span></div></div>
@@ -242,25 +259,25 @@ footer .demo{margin-top:.8rem;font-size:.72rem;opacity:.65;font-style:italic}
   <!-- ASSORTIMENT -->
   <section class="wrap" aria-label="Assortiment">
     <div class="sec-head">
-      <div class="script">Uit de vitrine</div>
-      <h2>Assortiment &amp; prijzen</h2>
-      <p>Alles vers uit eigen banketbakkerij — zolang de voorraad strekt.</p>
+      <div class="script" data-i18n="menu_script">Uit de vitrine</div>
+      <h2 data-i18n="menu_h">Assortiment &amp; prijzen</h2>
+      <p data-i18n="menu_p">Alles vers uit eigen banketbakkerij — zolang de voorraad strekt.</p>
     </div>
 
     <div class="prod hero-prod">
       <div class="prod-top">
         <h3>Slagroomijs</h3>
       </div>
-      <p><b>De legendarische.</b> Ons beroemde roomijs van slagroom met vanille — al sinds 1937 de enige smaak die wij scheppen. Geserveerd op hoorntje of in een bekertje.</p>
+      <p data-i18n="prod_ijs_p"><b>De legendarische.</b> Ons beroemde roomijs van slagroom met vanille — al sinds 1937 de enige smaak die wij scheppen. Geserveerd op hoorntje of in een bekertje.</p>
     </div>
 
     <div class="prod featured">
-      <span class="badge">Ons bekendste souvenir</span>
+      <span class="badge" data-i18n="badge">Ons bekendste souvenir</span>
       <div class="prod-top">
-        <h3>Slagroom truffels <span style="font-weight:400;font-size:.9rem">(8 stuks)</span></h3>
+        <h3 data-i18n="prod_truffels_t">Slagroom truffels <span style="font-weight:400;font-size:.9rem">(8 stuks)</span></h3>
         <span class="prijs">€ 2,90</span>
       </div>
-      <p>Om mee naar huis te nemen — het beroemdste doosje van Amsterdam.</p>
+      <p data-i18n="prod_truffels_p">Om mee naar huis te nemen — het beroemdste doosje van Amsterdam.</p>
     </div>
 
     <div class="prod">
@@ -268,7 +285,7 @@ footer .demo{margin-top:.8rem;font-size:.72rem;opacity:.65;font-style:italic}
         <h3>Oubliehoorn</h3>
         <span class="prijs">€ 2,00</span>
       </div>
-      <p>Het klassieke hoorntje met ons slagroomijs.</p>
+      <p data-i18n="prod_oublie_p">Het klassieke hoorntje met ons slagroomijs.</p>
     </div>
 
     <div class="prod">
@@ -276,42 +293,42 @@ footer .demo{margin-top:.8rem;font-size:.72rem;opacity:.65;font-style:italic}
         <h3>Dubbelhoorn</h3>
         <span class="prijs">€ 1,70 – € 2,40</span>
       </div>
-      <p>Dubbel genieten van de enige echte smaak.</p>
+      <p data-i18n="prod_dubbel_p">Dubbel genieten van de enige echte smaak.</p>
     </div>
 
     <div class="prod">
       <div class="prod-top">
-        <h3>Baby ijsje</h3>
+        <h3 data-i18n="prod_baby_t">Baby ijsje</h3>
         <span class="prijs">€ 1,00</span>
       </div>
-      <p>Voor de kleinste liefhebbers.</p>
+      <p data-i18n="prod_baby_p">Voor de kleinste liefhebbers.</p>
     </div>
 
     <div class="prod">
       <div class="prod-top">
-        <h3>Bekertjes</h3>
+        <h3 data-i18n="prod_beker_t">Bekertjes</h3>
         <span class="prijs">€ 2,20 – € 3,80</span>
       </div>
-      <p>Slagroomijs in een bekertje, voor onderweg.</p>
+      <p data-i18n="prod_beker_p">Slagroomijs in een bekertje, voor onderweg.</p>
     </div>
 
     <div class="prod">
       <div class="prod-top">
-        <h3>Roomboter cake</h3>
+        <h3 data-i18n="prod_cake_t">Roomboter cake</h3>
         <span class="prijs">€ 3,99</span>
       </div>
-      <p>Rijk gebak van echte roomboter, uit eigen oven.</p>
+      <p data-i18n="prod_cake_p">Rijk gebak van echte roomboter, uit eigen oven.</p>
     </div>
 
     <div class="prod">
       <div class="prod-top">
-        <h3>Mandel bitterkoek</h3>
+        <h3 data-i18n="prod_bitter_t">Mandel bitterkoek</h3>
         <span class="prijs">€ 1,50</span>
       </div>
-      <p>Ambachtelijke amandelkoekjes bij de koffie.</p>
+      <p data-i18n="prod_bitter_p">Ambachtelijke amandelkoekjes bij de koffie.</p>
     </div>
 
-    <p class="opmerking">Ook in de vitrine: choco truffels · mergpijpjes · slagroomtaart · wafels — vraag in de winkel naar de dagprijzen.</p>
+    <p class="opmerking" data-i18n="opmerking">Ook in de vitrine: choco truffels · mergpijpjes · slagroomtaart · wafels — vraag in de winkel naar de dagprijzen.</p>
   </section>
 
   <div class="wrap"><div class="orn" aria-hidden="true"><span>✦</span></div></div>
@@ -319,11 +336,11 @@ footer .demo{margin-top:.8rem;font-size:.72rem;opacity:.65;font-style:italic}
   <!-- VERHAAL -->
   <section aria-label="Ons verhaal">
     <div class="verhaal">
-      <div class="script">Ons verhaal</div>
-      <h2>Een Amsterdamse legende</h2>
-      <p>In 1937 opent de familie Van der Linde haar banketbakkerij aan de Nieuwendijk. Bijna negentig jaar later scheppen wij nog steeds maar <b>één smaak ijs</b>: slagroomijs.</p>
-      <p>Dagelijks staan er rijen voor de deur — van buurtbewoners tot bezoekers uit de hele wereld, allemaal voor dat ene hoorntje.</p>
-      <div class="quote">“Een icoon in de stad.”</div>
+      <div class="script" data-i18n="story_script">Ons verhaal</div>
+      <h2 data-i18n="story_h">Een Amsterdamse legende</h2>
+      <p data-i18n="story_p1">In 1937 opent de familie Van der Linde haar banketbakkerij aan de Nieuwendijk. Bijna negentig jaar later scheppen wij nog steeds maar <b>één smaak ijs</b>: slagroomijs.</p>
+      <p data-i18n="story_p2">Dagelijks staan er rijen voor de deur — van buurtbewoners tot bezoekers uit de hele wereld, allemaal voor dat ene hoorntje.</p>
+      <div class="quote" data-i18n="story_quote">“Een icoon in de stad.”</div>
     </div>
   </section>
 
@@ -332,15 +349,15 @@ footer .demo{margin-top:.8rem;font-size:.72rem;opacity:.65;font-style:italic}
   <!-- OPENINGSTIJDEN -->
   <section class="wrap" aria-label="Openingstijden">
     <div class="sec-head">
-      <div class="script">Wanneer</div>
-      <h2>Openingstijden</h2>
+      <div class="script" data-i18n="hours_script">Wanneer</div>
+      <h2 data-i18n="hours_h">Openingstijden</h2>
     </div>
     <div class="tijden">
       <table>
-        <tr data-days="1"><td>Maandag</td><td>12:30 – 17:00</td></tr>
-        <tr data-days="2,3,4,5"><td>Dinsdag t/m vrijdag</td><td>12:00 – 17:00</td></tr>
-        <tr data-days="6"><td>Zaterdag</td><td>10:00 – 17:00</td></tr>
-        <tr data-days="0"><td>Zondag</td><td>12:00 – 17:00</td></tr>
+        <tr data-days="1"><td data-i18n="day_mon">Maandag</td><td>12:30 – 17:00</td></tr>
+        <tr data-days="2,3,4,5"><td data-i18n="day_tuefri">Dinsdag t/m vrijdag</td><td>12:00 – 17:00</td></tr>
+        <tr data-days="6"><td data-i18n="day_sat">Zaterdag</td><td>10:00 – 17:00</td></tr>
+        <tr data-days="0"><td data-i18n="day_sun">Zondag</td><td>12:00 – 17:00</td></tr>
       </table>
     </div>
     <p class="status" id="status">…</p>
@@ -351,9 +368,9 @@ footer .demo{margin-top:.8rem;font-size:.72rem;opacity:.65;font-style:italic}
   <!-- LOCATIE -->
   <section class="wrap" aria-label="Locatie en contact">
     <div class="sec-head">
-      <div class="script">Waar</div>
-      <h2>Bezoek ons</h2>
-      <p>Midden in het centrum, op een steenworp van het Centraal Station.</p>
+      <div class="script" data-i18n="loc_script">Waar</div>
+      <h2 data-i18n="loc_h">Bezoek ons</h2>
+      <p data-i18n="loc_p">Midden in het centrum, op een steenworp van het Centraal Station.</p>
     </div>
     <div class="loc">
       <address>
@@ -363,23 +380,163 @@ footer .demo{margin-top:.8rem;font-size:.72rem;opacity:.65;font-style:italic}
         <a class="tel" href="tel:+31206248213">+31 20 624 8213</a>
       </address>
       <div class="cta-row">
-        <a class="btn btn-primary" href="tel:+31206248213">Bellen</a>
-        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Banketbakkerij%20Van%20der%20Linde%20Nieuwendijk%20183%201012%20MG%20Amsterdam" target="_blank" rel="noopener">Route plannen</a>
+        <a class="btn btn-primary" href="tel:+31206248213" data-i18n="btn_call_loc">Bellen</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Banketbakkerij%20Van%20der%20Linde%20Nieuwendijk%20183%201012%20MG%20Amsterdam" target="_blank" rel="noopener" data-i18n="btn_route_loc">Route plannen</a>
       </div>
-      <div class="cash-mini"><b>Let op:</b> wij accepteren <b>alleen contant geld</b>.</div>
+      <div class="cash-mini" data-i18n="cash_mini"><b>Let op:</b> wij accepteren <b>alleen contant geld</b>.</div>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="script">Van der Linde</div>
-  <p>Banketbakkerij · Sinds 1937<br>Nieuwendijk 183 · 1012 MG Amsterdam · +31 20 624 8213</p>
-  <p class="demo">Conceptwebsite ter beoordeling — nog niet de officiële site van de bakkerij.</p>
+  <p data-i18n="footer_p">Banketbakkerij · Sinds 1937<br>Nieuwendijk 183 · 1012 MG Amsterdam · +31 20 624 8213</p>
+  <p class="demo" data-i18n="footer_demo">Conceptwebsite ter beoordeling — nog niet de officiële site van de bakkerij.</p>
 </footer>
 
 <script>
+// ── Taal / Idioma / Language ──
+var I18N = {
+es: {
+  title: "Banketbakkerij Van der Linde · Slagroomijs desde 1937 · Ámsterdam",
+  topbar: "Desde <b>1937</b> · Nieuwendijk 183 · Ámsterdam",
+  hero_kicker: "Institución de Ámsterdam",
+  hero_sub: "Un solo sabor. Preparado como en 1937.",
+  hero_p: "Desde 1937 servimos nuestro legendario Slagroomijs, nuestro helado de nata montada con vainilla. Fresco cada día, por el que tanto vecinos como turistas hacen cola con gusto.",
+  rating_text: "<b>4,4</b> · 2.491 reseñas en Google",
+  btn_call_hero: "Llámanos",
+  btn_route_hero: "Cómo llegar",
+  cash: "<b>Solo efectivo</b><br>Solo aceptamos dinero en efectivo.",
+  menu_script: "De nuestra vitrina",
+  menu_h: "Productos y precios",
+  menu_p: "Todo fresco de nuestra propia pastelería, hasta agotar existencias.",
+  prod_ijs_p: "<b>El legendario.</b> Nuestro famoso helado de nata montada con vainilla: desde 1937, el único sabor que servimos. En cucurucho o en vasito.",
+  badge: "Nuestro souvenir más famoso",
+  prod_truffels_t: "Slagroom truffels <span style=\"font-weight:400;font-size:.9rem\">(8 uds.)</span>",
+  prod_truffels_p: "Para llevar a casa: la cajita más famosa de Ámsterdam.",
+  prod_oublie_p: "El cucurucho clásico con nuestro Slagroomijs.",
+  prod_dubbel_p: "Doble disfrute del único y auténtico sabor.",
+  prod_baby_t: "Heladito para peques",
+  prod_baby_p: "Para los más pequeños de la casa.",
+  prod_beker_t: "Vasitos",
+  prod_beker_p: "Slagroomijs en vasito, para llevar.",
+  prod_cake_t: "Bizcocho de mantequilla",
+  prod_cake_p: "Jugoso bizcocho de mantequilla de verdad, de nuestro propio horno.",
+  prod_bitter_t: "Dulces de almendra",
+  prod_bitter_p: "Artesanales dulces de almendra, perfectos con el café.",
+  opmerking: "También en la vitrina: choco truffels · mergpijpjes · slagroomtaart · wafels. Pregunta en la tienda por los precios del día.",
+  story_script: "Nuestra historia",
+  story_h: "Una leyenda de Ámsterdam",
+  story_p1: "En 1937 la familia Van der Linde abrió su pastelería en Nieuwendijk. Casi noventa años después, seguimos sirviendo <b>un solo sabor de helado</b>: el Slagroomijs.",
+  story_p2: "Cada día hay cola en la puerta: desde vecinos del barrio hasta visitantes de todo el mundo, todos por ese cucurucho.",
+  story_quote: "“Un icono de la ciudad.”",
+  hours_script: "Cuándo",
+  hours_h: "Horario",
+  day_mon: "Lunes",
+  day_tuefri: "Martes a viernes",
+  day_sat: "Sábado",
+  day_sun: "Domingo",
+  loc_script: "Dónde",
+  loc_h: "Visítanos",
+  loc_p: "En pleno centro, a un paso de la Estación Central.",
+  btn_call_loc: "Llámanos",
+  btn_route_loc: "Cómo llegar",
+  cash_mini: "<b>Ojo:</b> solo aceptamos <b>dinero en efectivo</b>.",
+  footer_p: "Pastelería · Desde 1937<br>Nieuwendijk 183 · 1012 MG Ámsterdam · +31 20 624 8213",
+  footer_demo: "Sitio web conceptual en revisión: aún no es la página oficial de la pastelería."
+},
+en: {
+  title: "Banketbakkerij Van der Linde · Slagroomijs since 1937 · Amsterdam",
+  topbar: "Since <b>1937</b> · Nieuwendijk 183 · Amsterdam",
+  hero_kicker: "An Amsterdam institution",
+  hero_sub: "One flavour. Made like in 1937.",
+  hero_p: "Since 1937 we\u2019ve been scooping our legendary Slagroomijs \u2014 whipped-cream ice cream with vanilla. Fresh every day, and worth queuing for, for locals and tourists alike.",
+  rating_text: "<b>4.4</b> · 2,491 Google reviews",
+  btn_call_hero: "Call us",
+  btn_route_hero: "Directions",
+  cash: "<b>Cash only</b><br>We only accept cash.",
+  menu_script: "From our display",
+  menu_h: "Menu & prices",
+  menu_p: "Everything fresh from our own bakery \u2014 while stocks last.",
+  prod_ijs_p: "<b>The legendary one.</b> Our famous whipped-cream ice cream with vanilla \u2014 the only flavour we\u2019ve scooped since 1937. Served in a cone or a cup.",
+  badge: "Our most famous souvenir",
+  prod_truffels_t: "Slagroom truffels <span style=\"font-weight:400;font-size:.9rem\">(8 pcs)</span>",
+  prod_truffels_p: "To take home \u2014 Amsterdam\u2019s most famous little box.",
+  prod_oublie_p: "The classic cone with our Slagroomijs.",
+  prod_dubbel_p: "Double the joy of the one true flavour.",
+  prod_baby_t: "Baby ice cream",
+  prod_baby_p: "For the littlest fans.",
+  prod_beker_t: "Cups",
+  prod_beker_p: "Slagroomijs in a cup, to go.",
+  prod_cake_t: "Butter cake",
+  prod_cake_p: "Rich cake made with real butter, from our own oven.",
+  prod_bitter_t: "Almond cookies",
+  prod_bitter_p: "Artisan almond cookies, perfect with coffee.",
+  opmerking: "Also in our display: choco truffels \u00B7 mergpijpjes \u00B7 slagroomtaart \u00B7 wafels \u2014 ask in the shop for today\u2019s prices.",
+  story_script: "Our story",
+  story_h: "An Amsterdam legend",
+  story_p1: "In 1937 the Van der Linde family opened its bakery on Nieuwendijk. Almost ninety years later, we still scoop just <b>one flavour of ice cream</b>: Slagroomijs.",
+  story_p2: "Every day there\u2019s a queue at the door \u2014 from locals to visitors from all over the world, all for that one cone.",
+  story_quote: "\u201CAn icon of the city.\u201D",
+  hours_script: "When",
+  hours_h: "Opening hours",
+  day_mon: "Monday",
+  day_tuefri: "Tuesday to Friday",
+  day_sat: "Saturday",
+  day_sun: "Sunday",
+  loc_script: "Where",
+  loc_h: "Visit us",
+  loc_p: "Right in the city centre, a stone\u2019s throw from Central Station.",
+  btn_call_loc: "Call us",
+  btn_route_loc: "Directions",
+  cash_mini: "<b>Please note:</b> we only accept <b>cash</b>.",
+  footer_p: "Pastry shop \u00B7 Since 1937<br>Nieuwendijk 183 \u00B7 1012 MG Amsterdam \u00B7 +31 20 624 8213",
+  footer_demo: "Concept website under review \u2014 not yet the bakery\u2019s official site."
+}};
+
+var STATUS_TXT = {
+  nl: {open:"● Nu open", closed:"● Nu gesloten", closes:"sluit om", opens:"opent om", opensTomorrow:"opent morgen om"},
+  es: {open:"● Abierto ahora", closed:"● Cerrado ahora", closes:"cierra a las", opens:"abre a las", opensTomorrow:"abre mañana a las"},
+  en: {open:"● Open now", closed:"● Closed now", closes:"closes at", opens:"opens at", opensTomorrow:"opens tomorrow at"}
+};
+
+var lang = 'nl';
+var TITLE_NL = document.title;
+
+// bewaar de Nederlandse brontekst
+document.querySelectorAll('[data-i18n]').forEach(function(el){
+  el.setAttribute('data-nl', el.innerHTML);
+});
+
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  document.body.classList.remove('lang-es','lang-en');
+  if(l === 'es' || l === 'en'){
+    document.body.classList.add('lang-'+l);
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      if(I18N[l][k] != null) el.innerHTML = I18N[l][k];
+    });
+    document.title = I18N[l].title;
+  }else{
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      el.innerHTML = el.getAttribute('data-nl');
+    });
+    document.title = TITLE_NL;
+  }
+  document.querySelectorAll('.langbar button').forEach(function(b){
+    b.classList.toggle('active', b.getAttribute('data-lang') === l);
+  });
+  updateStatus();
+}
+
+document.querySelectorAll('.langbar button').forEach(function(b){
+  b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); });
+});
+
 // Markeer de rij van vandaag + toon open/dicht-status
-(function(){
+function updateStatus(){
   var nu = new Date();
   var dag = nu.getDay(); // 0=zo … 6=za
   var minuten = nu.getHours()*60 + nu.getMinutes();
@@ -387,19 +544,21 @@ footer .demo{margin-top:.8rem;font-size:.72rem;opacity:.65;font-style:italic}
   var tijden = {0:[720,1020], 1:[750,1020], 2:[720,1020], 3:[720,1020], 4:[720,1020], 5:[720,1020], 6:[600,1020]};
   document.querySelectorAll('.tijden tr').forEach(function(tr){
     var dagen = tr.getAttribute('data-days').split(',').map(Number);
-    if(dagen.indexOf(dag) !== -1){ tr.classList.add('vandaag'); }
+    tr.classList.toggle('vandaag', dagen.indexOf(dag) !== -1);
   });
   function fmt(m){ return Math.floor(m/60)+':'+String(m%60).padStart(2,'0'); }
   var el = document.getElementById('status');
   var t = tijden[dag];
+  var S = STATUS_TXT[lang] || STATUS_TXT.nl;
   if(minuten >= t[0] && minuten < t[1]){
-    el.innerHTML = '<span class="open">● Nu open</span> · sluit om '+fmt(t[1]);
+    el.innerHTML = '<span class="open">'+S.open+'</span> · '+S.closes+' '+fmt(t[1]);
   }else if(minuten < t[0]){
-    el.innerHTML = '<span class="closed">● Nu gesloten</span> · opent om '+fmt(t[0]);
+    el.innerHTML = '<span class="closed">'+S.closed+'</span> · '+S.opens+' '+fmt(t[0]);
   }else{
-    el.innerHTML = '<span class="closed">● Nu gesloten</span> · opent morgen om '+fmt(tijden[(dag+1)%7][0]);
+    el.innerHTML = '<span class="closed">'+S.closed+'</span> · '+S.opensTomorrow+' '+fmt(tijden[(dag+1)%7][0]);
   }
-})();
+}
+updateStatus();
 </script>
 </body>
 </html>
