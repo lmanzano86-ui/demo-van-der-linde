@@ -181,6 +181,13 @@ body.lang-en .tijden tr.vandaag td:first-child::after{content:"· today"}
 .loc .cash-mini{margin-top:.9rem;font-size:.88rem;color:var(--ink-soft);border-top:1px dashed var(--gold);padding-top:.8rem}
 .loc .cash-mini b{color:var(--brick)}
 
+/* ── QR ────────────────────────────────────── */
+.qr-row{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+.qr-card{background:var(--card);border:1px solid #E4D6B4;border-radius:12px;padding:1.1rem;text-align:center;box-shadow:0 2px 10px rgba(59,42,53,.07);flex:1 1 200px;max-width:260px}
+.qr-card img{width:150px;height:150px;border:3px solid var(--gold);border-radius:8px;background:#fff}
+.qr-card h3{font-size:1.05rem;margin:.7rem 0 .2rem}
+.qr-card p{font-size:.88rem;color:var(--ink-soft)}
+
 /* ── Footer ────────────────────────────────── */
 footer{
   background:var(--purple-deep);color:#CBBFA4;text-align:center;
@@ -386,6 +393,29 @@ footer .demo{margin-top:.8rem;font-size:.72rem;opacity:.65;font-style:italic}
       <div class="cash-mini" data-i18n="cash_mini"><b>Let op:</b> wij accepteren <b>alleen contant geld</b>.</div>
     </div>
   </section>
+
+  <div class="wrap"><div class="orn" aria-hidden="true"><span>✦</span></div></div>
+
+  <!-- QR -->
+  <section class="wrap" aria-label="QR codes">
+    <div class="sec-head">
+      <div class="script" data-i18n="qr_script">Scan</div>
+      <h2 data-i18n="qr_h">Scan &amp; ga</h2>
+      <p data-i18n="qr_p">Scan de QR-code met je telefoon.</p>
+    </div>
+    <div class="qr-row">
+      <div class="qr-card">
+        <a href="https://maps.app.goo.gl/cchq4nU2MQpjvTWD7" target="_blank" rel="noopener"><img src="qr-route.png" alt="QR-code route" width="150" height="150"></a>
+        <h3 data-i18n="qr_route_t">Route</h3>
+        <p data-i18n="qr_route_p">Direct naar ons op Google Maps.</p>
+      </div>
+      <div class="qr-card">
+        <a href="https://search.google.com/local/writereview?placeid=ChIJCfDSoccJxkcR7nk2nSGTs78" target="_blank" rel="noopener"><img src="qr-review.png" alt="QR-code review" width="150" height="150"></a>
+        <h3 data-i18n="qr_review_t">Review</h3>
+        <p data-i18n="qr_review_p">Laat een Google-review achter.</p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -443,7 +473,14 @@ es: {
   btn_route_loc: "Cómo llegar",
   cash_mini: "<b>Ojo:</b> solo aceptamos <b>dinero en efectivo</b>.",
   footer_p: "Pastelería · Desde 1937<br>Nieuwendijk 183 · 1012 MG Ámsterdam · +31 20 624 8213",
-  footer_demo: "Sitio web conceptual en revisión: aún no es la página oficial de la pastelería."
+  footer_demo: "Sitio web conceptual en revisión: aún no es la página oficial de la pastelería.",
+  qr_script: "Escanea",
+  qr_h: "Escanea y ven",
+  qr_p: "Escanea el código QR con tu teléfono.",
+  qr_route_t: "Cómo llegar",
+  qr_route_p: "Llévame en Google Maps.",
+  qr_review_t: "Reseña",
+  qr_review_p: "Déjanos tu reseña en Google."
 },
 en: {
   title: "Banketbakkerij Van der Linde · Slagroomijs since 1937 · Amsterdam",
@@ -491,7 +528,14 @@ en: {
   btn_route_loc: "Directions",
   cash_mini: "<b>Please note:</b> we only accept <b>cash</b>.",
   footer_p: "Pastry shop \u00B7 Since 1937<br>Nieuwendijk 183 \u00B7 1012 MG Amsterdam \u00B7 +31 20 624 8213",
-  footer_demo: "Concept website under review \u2014 not yet the bakery\u2019s official site."
+  footer_demo: "Concept website under review \u2014 not yet the bakery\u2019s official site.",
+  qr_script: "Scan",
+  qr_h: "Scan & visit",
+  qr_p: "Scan the QR code with your phone.",
+  qr_route_t: "Directions",
+  qr_route_p: "Take me there on Google Maps.",
+  qr_review_t: "Review",
+  qr_review_p: "Leave us a Google review."
 }};
 
 var STATUS_TXT = {
