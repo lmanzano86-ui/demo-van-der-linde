@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banketbakkerij Van der Linde · Slagroomijs sinds 1937 · Amsterdam</title>
+<meta name="description" content="Banketbakkerij Van der Linde aan de Nieuwendijk in Amsterdam. Legendarisch slagroomijs sinds 1937 — één smaak, elke dag vers. Alleen contant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F6EFDF;
+  --cream-2:#EFE3C8;
+  --purple:#6E2B7B;
+  --purple-deep:#4E1D58;
+  --gold:#C9A227;
+  --gold-deep:#8C6D1F;
+  --brick:#B4654A;
+  --ink:#3B2A35;
+  --ink-soft:#5C4A55;
+  --card:#FFFDF6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Georgia,'Times New Roman',serif;
+  background:var(--cream);
+  background-image:radial-gradient(rgba(110,43,123,.055) 1px, transparent 1.4px);
+  background-size:22px 22px;
+  color:var(--ink);
+  line-height:1.6;
+  max-width:640px;
+  margin:0 auto;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--purple-deep);line-height:1.2}
+.script{font-family:'Pinyon Script',cursive;color:var(--gold-deep)}
+.wrap{padding:0 20px}
+
+/* ── Bovenbalk ─────────────────────────────── */
+.topbar{
+  background:var(--purple-deep);color:var(--cream);
+  text-align:center;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:.55rem 1rem;
+}
+.topbar b{color:var(--gold)}
+
+/* ── Header / zegel ────────────────────────── */
+.seal{
+  display:flex;justify-content:center;padding:1.6rem 0 .4rem;
+}
+.seal-inner{
+  width:92px;height:92px;border-radius:50%;
+  border:3px double var(--gold);
+  background:var(--purple);color:var(--cream);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px rgba(78,29,88,.25);
+}
+.seal-inner .vl{font-family:'Fraunces',serif;font-weight:700;font-size:1.9rem;line-height:1}
+.seal-inner .est{font-size:.6rem;letter-spacing:.22em;color:var(--gold);margin-top:.15rem}
+.brand{text-align:center;padding:.2rem 0 0}
+.brand .over{font-size:.8rem;letter-spacing:.34em;text-transform:uppercase;color:var(--brick)}
+.brand h1{font-size:2.15rem;font-weight:700;margin:.15rem 0}
+.brand .sub{font-size:.85rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* ── Ornament ──────────────────────────────── */
+.orn{display:flex;align-items:center;gap:.7rem;margin:1.1rem auto;max-width:420px;color:var(--gold)}
+.orn::before,.orn::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.orn span{font-size:1.05rem}
+
+/* ── Hero ──────────────────────────────────── */
+.hero{padding:.6rem 0 1.4rem;text-align:center}
+.hero .kicker{font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--brick);margin-bottom:.4rem}
+.hero .script{font-size:3.4rem;line-height:1.05}
+.hero h2{font-size:1.45rem;font-weight:600;margin:.35rem 0 .6rem}
+.hero p{max-width:34ch;margin:0 auto .9rem;color:var(--ink-soft)}
+.cone-fig{margin:.4rem auto 1rem;max-width:220px}
+.rating{
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:var(--card);border:1px solid var(--gold);border-radius:999px;
+  padding:.35rem .95rem;font-size:.9rem;color:var(--ink-soft);
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.rating .stars{color:var(--gold-deep);letter-spacing:.05em}
+.cta-row{display:flex;gap:.7rem;justify-content:center;margin:1.1rem 0 .4rem;flex-wrap:wrap}
+.btn{
+  display:inline-block;text-decoration:none;font-family:'Fraunces',serif;font-weight:600;
+  padding:.8rem 1.6rem;border-radius:999px;font-size:1rem;letter-spacing:.02em;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--purple);color:#fff;box-shadow:0 4px 12px rgba(110,43,123,.35)}
+.btn-ghost{border:2px solid var(--purple);color:var(--purple-deep);background:transparent}
+.cash{
+  margin:1.2rem auto 0;max-width:440px;
+  background:var(--purple-deep);color:#fff;border:2px solid var(--gold);border-radius:10px;
+  padding:.7rem 1rem;font-size:.95rem;
+}
+.cash b{color:var(--gold);letter-spacing:.12em;text-transform:uppercase;font-size:.85rem}
+
+/* ── Secties ───────────────────────────────── */
+section{padding:1.6rem 0}
+.sec-head{text-align:center;margin-bottom:1.1rem}
+.sec-head .script{font-size:2rem}
+.sec-head h2{font-size:1.5rem;font-weight:700;margin:.1rem 0 .3rem}
+.sec-head p{color:var(--ink-soft);font-size:.95rem;max-width:36ch;margin:0 auto}
+
+/* ── Assortiment ───────────────────────────── */
+.prod{
+  background:var(--card);border:1px solid #E4D6B4;border-radius:12px;
+  padding:1rem 1.1rem;margin-bottom:.8rem;
+  box-shadow:0 2px 10px rgba(59,42,53,.07);
+  position:relative;
+}
+.prod.featured{border:2px solid var(--gold);background:linear-gradient(180deg,#FFFDF6,#FBF3DC)}
+.prod-top{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem}
+.prod h3{font-size:1.15rem;font-weight:700}
+.prijs{
+  font-family:'Fraunces',serif;font-weight:700;font-size:1.2rem;color:#fff;
+  background:var(--brick);border-radius:999px;padding:.15rem .8rem;white-space:nowrap;
+}
+.prod p{font-size:.92rem;color:var(--ink-soft);margin-top:.25rem}
+.badge{
+  position:absolute;top:-.7rem;right:1rem;
+  background:var(--gold);color:var(--purple-deep);
+  font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:.25rem .7rem;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+.prod.hero-prod{border:2px dashed var(--purple);background:#F7EFF9}
+.prod.hero-prod h3{color:var(--purple)}
+.opmerking{
+  text-align:center;font-size:.88rem;color:var(--ink-soft);font-style:italic;margin-top:.9rem;
+}
+
+/* ── Verhaal ───────────────────────────────── */
+.verhaal{
+  background:var(--purple-deep);color:#F3EAD3;border-radius:14px;
+  padding:1.6rem 1.3rem;margin:0 20px;text-align:center;
+  border:3px double var(--gold);
+}
+.verhaal .script{font-size:2rem;color:var(--gold)}
+.verhaal h2{color:#fff;font-size:1.4rem;margin:.1rem 0 .7rem}
+.verhaal p{font-size:.97rem;margin-bottom:.7rem;color:#EFE6CF}
+.verhaal .quote{
+  font-family:'Fraunces',serif;font-style:italic;color:var(--gold);
+  font-size:1.1rem;letter-spacing:.06em;margin-top:.9rem;
+}
+
+/* ── Openingstijden ────────────────────────── */
+.tijden{background:var(--card);border:1px solid #E4D6B4;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(59,42,53,.07)}
+.tijden table{width:100%;border-collapse:collapse;font-size:.95rem}
+.tijden td{padding:.7rem 1.1rem;border-bottom:1px solid #EFE3C8}
+.tijden tr:last-child td{border-bottom:none}
+.tijden td:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-soft)}
+.tijden tr.vandaag td{background:#F7EFF9;font-weight:700;color:var(--purple-deep)}
+.tijden tr.vandaag td:first-child::after{
+  content:"· vandaag";font-weight:400;font-size:.8rem;color:var(--brick);margin-left:.4rem;
+}
+.status{text-align:center;margin-top:.8rem;font-size:.95rem}
+.status .open{color:#2E7D32;font-weight:700}
+.status .closed{color:var(--brick);font-weight:700}
+
+/* ── Locatie ───────────────────────────────── */
+.loc{background:var(--card);border:1px solid #E4D6B4;border-radius:12px;padding:1.3rem;text-align:center;box-shadow:0 2px 10px rgba(59,42,53,.07)}
+.loc address{font-style:normal;font-size:1.05rem;line-height:1.7}
+.loc address b{font-family:'Fraunces',serif;color:var(--purple-deep)}
+.loc .tel{font-size:1.25rem;font-weight:700;color:var(--purple);text-decoration:none;font-family:'Fraunces',serif}
+.loc .cash-mini{margin-top:.9rem;font-size:.88rem;color:var(--ink-soft);border-top:1px dashed var(--gold);padding-top:.8rem}
+.loc .cash-mini b{color:var(--brick)}
+
+/* ── Footer ────────────────────────────────── */
+footer{
+  background:var(--purple-deep);color:#CBBFA4;text-align:center;
+  padding:1.6rem 1.2rem 2rem;margin-top:1.8rem;font-size:.82rem;
+}
+footer .script{color:var(--gold);font-size:1.5rem}
+footer p{margin-top:.4rem}
+footer .demo{margin-top:.8rem;font-size:.72rem;opacity:.65;font-style:italic}
+</style>
+</head>
+<body>
+
+<div class="topbar">Sinds <b>1937</b> · Nieuwendijk 183 · Amsterdam</div>
+
+<header>
+  <div class="seal" aria-hidden="true">
+    <div class="seal-inner">
+      <span class="vl">VL</span>
+      <span class="est">EST. 1937</span>
+    </div>
+  </div>
+  <div class="brand wrap">
+    <div class="over">Banketbakkerij</div>
+    <h1>Van der Linde</h1>
+    <div class="sub">Amsterdam · Sinds 1937</div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero wrap" aria-label="Slagroomijs">
+    <div class="kicker">Amsterdamse instelling</div>
+    <div class="script">Slagroomijs</div>
+    <h2>Eén smaak. Bereid zoals in 1937.</h2>
+    <figure class="cone-fig" aria-label="Illustratie van een hoorntje slagroomijs">
+      <svg viewBox="0 0 160 230" role="img" aria-hidden="true">
+        <!-- slagroom swirl -->
+        <path d="M80 18 C66 18 58 28 60 38 C48 38 42 48 47 56 C37 58 34 68 41 74 C34 80 38 90 48 90 L112 90 C122 90 126 80 119 74 C126 68 123 58 113 56 C118 48 112 38 100 38 C102 28 94 18 80 18 Z"
+              fill="#FFFDF6" stroke="#6E2B7B" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M80 18 C74 26 74 32 80 38" fill="none" stroke="#C9A227" stroke-width="3" stroke-linecap="round"/>
+        <!-- hoorntje -->
+        <path d="M48 96 L80 208 L112 96 Z" fill="#B4654A" stroke="#4E1D58" stroke-width="4" stroke-linejoin="round"/>
+        <g stroke="#7E3B26" stroke-width="2.4" opacity=".8">
+          <line x1="58" y1="104" x2="86" y2="176"/>
+          <line x1="72" y1="102" x2="98" y2="168"/>
+          <line x1="88" y1="100" x2="80" y2="132"/>
+          <line x1="102" y1="104" x2="74" y2="176"/>
+          <line x1="88" y1="102" x2="62" y2="168"/>
+        </g>
+        <path d="M48 96 L112 96" stroke="#4E1D58" stroke-width="4" stroke-linecap="round"/>
+        <!-- gouden vonkjes -->
+        <g fill="#C9A227">
+          <circle cx="30" cy="60" r="3.4"/>
+          <circle cx="132" cy="52" r="2.6"/>
+          <circle cx="126" cy="120" r="3"/>
+          <circle cx="34" cy="128" r="2.4"/>
+        </g>
+      </svg>
+    </figure>
+    <p>Al sinds 1937 scheppen wij ons legendarische slagroomijs — roomijs van slagroom met vanille. Elke dag vers, waarvoor Amsterdammers én toeristen graag in de rij staan.</p>
+    <div class="rating"><span class="stars">★★★★☆</span><span><b>4,4</b> · 2.491 Google-reviews</span></div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:+31206248213">Bel ons</a>
+      <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Banketbakkerij%20Van%20der%20Linde%20Nieuwendijk%20183%201012%20MG%20Amsterdam" target="_blank" rel="noopener">Route</a>
+    </div>
+    <div class="cash"><b>Alleen contant</b><br>Wij accepteren alleen contant geld.</div>
+  </section>
+
+  <div class="wrap"><div class="orn" aria-hidden="true"><span>✦</span></div></div>
+
+  <!-- ASSORTIMENT -->
+  <section class="wrap" aria-label="Assortiment">
+    <div class="sec-head">
+      <div class="script">Uit de vitrine</div>
+      <h2>Assortiment &amp; prijzen</h2>
+      <p>Alles vers uit eigen banketbakkerij — zolang de voorraad strekt.</p>
+    </div>
+
+    <div class="prod hero-prod">
+      <div class="prod-top">
+        <h3>Slagroomijs</h3>
+      </div>
+      <p><b>De legendarische.</b> Ons beroemde roomijs van slagroom met vanille — al sinds 1937 de enige smaak die wij scheppen. Geserveerd op hoorntje of in een bekertje.</p>
+    </div>
+
+    <div class="prod featured">
+      <span class="badge">Ons bekendste souvenir</span>
+      <div class="prod-top">
+        <h3>Slagroom truffels <span style="font-weight:400;font-size:.9rem">(8 stuks)</span></h3>
+        <span class="prijs">€ 2,90</span>
+      </div>
+      <p>Om mee naar huis te nemen — het beroemdste doosje van Amsterdam.</p>
+    </div>
+
+    <div class="prod">
+      <div class="prod-top">
+        <h3>Oubliehoorn</h3>
+        <span class="prijs">€ 2,00</span>
+      </div>
+      <p>Het klassieke hoorntje met ons slagroomijs.</p>
+    </div>
+
+    <div class="prod">
+      <div class="prod-top">
+        <h3>Dubbelhoorn</h3>
+        <span class="prijs">€ 1,70 – € 2,40</span>
+      </div>
+      <p>Dubbel genieten van de enige echte smaak.</p>
+    </div>
+
+    <div class="prod">
+      <div class="prod-top">
+        <h3>Baby ijsje</h3>
+        <span class="prijs">€ 1,00</span>
+      </div>
+      <p>Voor de kleinste liefhebbers.</p>
+    </div>
+
+    <div class="prod">
+      <div class="prod-top">
+        <h3>Bekertjes</h3>
+        <span class="prijs">€ 2,20 – € 3,80</span>
+      </div>
+      <p>Slagroomijs in een bekertje, voor onderweg.</p>
+    </div>
+
+    <div class="prod">
+      <div class="prod-top">
+        <h3>Roomboter cake</h3>
+        <span class="prijs">€ 3,99</span>
+      </div>
+      <p>Rijk gebak van echte roomboter, uit eigen oven.</p>
+    </div>
+
+    <div class="prod">
+      <div class="prod-top">
+        <h3>Mandel bitterkoek</h3>
+        <span class="prijs">€ 1,50</span>
+      </div>
+      <p>Ambachtelijke amandelkoekjes bij de koffie.</p>
+    </div>
+
+    <p class="opmerking">Ook in de vitrine: choco truffels · mergpijpjes · slagroomtaart · wafels — vraag in de winkel naar de dagprijzen.</p>
+  </section>
+
+  <div class="wrap"><div class="orn" aria-hidden="true"><span>✦</span></div></div>
+
+  <!-- VERHAAL -->
+  <section aria-label="Ons verhaal">
+    <div class="verhaal">
+      <div class="script">Ons verhaal</div>
+      <h2>Een Amsterdamse legende</h2>
+      <p>In 1937 opent de familie Van der Linde haar banketbakkerij aan de Nieuwendijk. Bijna negentig jaar later scheppen wij nog steeds maar <b>één smaak ijs</b>: slagroomijs.</p>
+      <p>Dagelijks staan er rijen voor de deur — van buurtbewoners tot bezoekers uit de hele wereld, allemaal voor dat ene hoorntje.</p>
+      <div class="quote">“Een icoon in de stad.”</div>
+    </div>
+  </section>
+
+  <div class="wrap"><div class="orn" aria-hidden="true"><span>✦</span></div></div>
+
+  <!-- OPENINGSTIJDEN -->
+  <section class="wrap" aria-label="Openingstijden">
+    <div class="sec-head">
+      <div class="script">Wanneer</div>
+      <h2>Openingstijden</h2>
+    </div>
+    <div class="tijden">
+      <table>
+        <tr data-days="1"><td>Maandag</td><td>12:30 – 17:00</td></tr>
+        <tr data-days="2,3,4,5"><td>Dinsdag t/m vrijdag</td><td>12:00 – 17:00</td></tr>
+        <tr data-days="6"><td>Zaterdag</td><td>10:00 – 17:00</td></tr>
+        <tr data-days="0"><td>Zondag</td><td>12:00 – 17:00</td></tr>
+      </table>
+    </div>
+    <p class="status" id="status">…</p>
+  </section>
+
+  <div class="wrap"><div class="orn" aria-hidden="true"><span>✦</span></div></div>
+
+  <!-- LOCATIE -->
+  <section class="wrap" aria-label="Locatie en contact">
+    <div class="sec-head">
+      <div class="script">Waar</div>
+      <h2>Bezoek ons</h2>
+      <p>Midden in het centrum, op een steenworp van het Centraal Station.</p>
+    </div>
+    <div class="loc">
+      <address>
+        <b>Banketbakkerij Van der Linde</b><br>
+        Nieuwendijk 183<br>
+        1012 MG Amsterdam<br><br>
+        <a class="tel" href="tel:+31206248213">+31 20 624 8213</a>
+      </address>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:+31206248213">Bellen</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Banketbakkerij%20Van%20der%20Linde%20Nieuwendijk%20183%201012%20MG%20Amsterdam" target="_blank" rel="noopener">Route plannen</a>
+      </div>
+      <div class="cash-mini"><b>Let op:</b> wij accepteren <b>alleen contant geld</b>.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="script">Van der Linde</div>
+  <p>Banketbakkerij · Sinds 1937<br>Nieuwendijk 183 · 1012 MG Amsterdam · +31 20 624 8213</p>
+  <p class="demo">Conceptwebsite ter beoordeling — nog niet de officiële site van de bakkerij.</p>
+</footer>
+
+<script>
+// Markeer de rij van vandaag + toon open/dicht-status
+(function(){
+  var nu = new Date();
+  var dag = nu.getDay(); // 0=zo … 6=za
+  var minuten = nu.getHours()*60 + nu.getMinutes();
+  // open, dicht in minuten vanaf middernacht
+  var tijden = {0:[720,1020], 1:[750,1020], 2:[720,1020], 3:[720,1020], 4:[720,1020], 5:[720,1020], 6:[600,1020]};
+  document.querySelectorAll('.tijden tr').forEach(function(tr){
+    var dagen = tr.getAttribute('data-days').split(',').map(Number);
+    if(dagen.indexOf(dag) !== -1){ tr.classList.add('vandaag'); }
+  });
+  function fmt(m){ return Math.floor(m/60)+':'+String(m%60).padStart(2,'0'); }
+  var el = document.getElementById('status');
+  var t = tijden[dag];
+  if(minuten >= t[0] && minuten < t[1]){
+    el.innerHTML = '<span class="open">● Nu open</span> · sluit om '+fmt(t[1]);
+  }else if(minuten < t[0]){
+    el.innerHTML = '<span class="closed">● Nu gesloten</span> · opent om '+fmt(t[0]);
+  }else{
+    el.innerHTML = '<span class="closed">● Nu gesloten</span> · opent morgen om '+fmt(tijden[(dag+1)%7][0]);
+  }
+})();
+</script>
+</body>
+</html>
